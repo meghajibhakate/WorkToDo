@@ -1,0 +1,746 @@
+ 
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --success: #4ade80;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --card-bg: #ffffff;
+            --shadow: rgba(67, 97, 238, 0.15);
+            --motivational: linear-gradient(135deg, #4361ee, #3a0ca3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="%234cc9f020"/><circle cx="30" cy="30" r="1" fill="%234cc9f020"/><circle cx="50" cy="70" r="1" fill="%234cc9f020"/><circle cx="90" cy="90" r="1" fill="%234cc9f020"/><circle cx="70" cy="40" r="1" fill="%234cc9f020"/></svg>');
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px var(--shadow);
+            overflow: hidden;
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            min-height: 700px;
+        }
+
+        .motivational-panel {
+            background: var(--motivational);
+            padding: 40px 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 300px;
+        }
+
+        .quote-container {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .author {
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .achievements {
+            margin-top: 30px;
+        }
+
+        .achievements h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 5px 0;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20,20 Q40,5 50,30 T80,20" stroke="white" fill="none"/><circle cx="30" cy="70" r="5" fill="white"/><circle cx="70" cy="50" r="8" fill="white"/></svg>');
+            background-size: 300px;
+        }
+
+        .app-body {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-section {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .task-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            background: var(--light);
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
+        }
+
+        .task-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 5px 20px rgba(76, 201, 240, 0.3);
+        }
+
+        .add-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .add-btn:hover {
+            background: #3651d1;
+            transform: translateY(-2px);
+        }
+
+        .filter-section {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            box-shadow: 0 5px 10px var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid #e9ecef;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tasks-container {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .task-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .task-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.2);
+        }
+
+        .task-card.completed {
+            background: #f0f7ff;
+            border-left-color: var(--success);
+            animation: celebrate 0.5s ease;
+        }
+
+        @keyframes celebrate {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .task-card.completed .task-text {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .task-check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid #dee2e6;
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .task-card.completed .task-check {
+            background: var(--success);
+            border-color: var(--success);
+            color: white;
+        }
+
+        .task-text {
+            flex: 1;
+            font-size: 1.1rem;
+            word-break: break-word;
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 10px;
+            margin-left: 15px;
+        }
+
+        .task-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            background: #e9ecef;
+            color: var(--dark);
+        }
+
+        .task-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .empty-state i {
+            font-size: 5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .empty-state p {
+            color: var(--dark);
+            opacity: 0.7;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .progress-container {
+            margin-top: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--success);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .motivational-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            line-height: 1.3;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.02);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .completed-animation {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            z-index: 1000;
+            animation: celebration 1s ease-out forwards;
+            pointer-events: none;
+        }
+
+        @keyframes celebration {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.5);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(2);
+            }
+        }
+
+        /* Responsive Design Improvements */
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                max-width: 800px;
+            }
+
+            .motivational-panel {
+                display: flex;
+                flex-direction: row;
+                padding: 25px;
+            }
+
+            .header {
+                flex: 1;
+                padding-right: 20px;
+            }
+
+            .achievements {
+                flex: 1;
+                margin-top: 0;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .motivational-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                min-height: auto;
+            }
+
+            .motivational-panel {
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .header {
+                padding-right: 0;
+            }
+
+            .achievements {
+                margin-top: 25px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .app-body {
+                padding: 25px 20px;
+            }
+
+            .motivational-text {
+                font-size: 1.4rem;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                border-radius: 15px;
+            }
+
+            .motivational-panel {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .quote-container {
+                padding: 15px;
+            }
+
+            .quote {
+                font-size: 1.1rem;
+            }
+
+            .achievements h3 {
+                font-size: 1.2rem;
+            }
+
+            .badge {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+
+            .app-body {
+                padding: 20px 15px;
+            }
+
+            .input-section {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 25px;
+            }
+
+            .add-btn {
+                padding: 15px;
+            }
+
+            .filter-section {
+                flex-wrap: wrap;
+            }
+
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+
+            .task-card {
+                padding: 15px;
+            }
+
+            .task-text {
+                font-size: 1rem;
+            }
+
+            .empty-state i {
+                font-size: 4rem;
+            }
+
+            .empty-state h3 {
+                font-size: 1.3rem;
+            }
+
+            .motivational-text {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 12px;
+            }
+
+            .motivational-panel {
+                padding: 18px;
+            }
+
+            .header h1 {
+                font-size: 1.7rem;
+            }
+
+            .quote {
+                font-size: 1rem;
+            }
+
+            .achievements h3 {
+                font-size: 1.1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 12px;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
+
+            .app-body {
+                padding: 18px 12px;
+            }
+
+            .task-card {
+                padding: 12px;
+            }
+
+            .task-check {
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+            }
+
+            .task-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+
+            .motivational-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 0;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .quote {
+                font-size: 0.95rem;
+            }
+
+            .stat-value {
+                font-size: 1.6rem;
+            }
+
+            .filter-btn {
+                padding: 7px 12px;
+                font-size: 0.8rem;
+            }
+
+            .task-text {
+                font-size: 0.95rem;
+            }
+
+            .motivational-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* Cross-browser compatibility */
+        @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+            .quote-container,
+            .stat-card,
+            .badge {
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        /* Fallback for browsers that don't support backdrop-filter */
+        @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+            .quote-container,
+            .stat-card,
+            .badge {
+                background: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+                max-width: 100%;
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .motivational-panel {
+                display: none;
+            }
+
+            .add-btn, .filter-section, .task-btn {
+                display: none;
+            }
+
+            .progress-container {
+                display: none;
+            }
+
+            .motivational-text {
+                display: none;
+            }
+
+            .task-input {
+                display: none;
+            }
+
+            .task-card {
+                box-shadow: none;
+                border-left: 4px solid var(--primary);
+                page-break-inside: avoid;
+            }
+        }

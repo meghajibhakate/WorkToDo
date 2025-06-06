@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do - MotiveTask | Achieve Your Dreams</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap"
+        rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+  
+</head>
+
+<body>
+    <div class="container">
+        <div class="motivational-panel">
+            <div class="pattern"></div>
+            <div class="header">
+                <h1>MotiveTask</h1>
+                <p>Transform your goals into achievements with every task completed</p>
+
+                <div class="quote-container">
+                    <div class="quote">"Productivity is never an accident. It is always the result of a commitment to
+                        excellence, intelligent planning, and focused effort."</div>
+                    <div class="author">- Paul J. Meyer</div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h3><i class="fas fa-trophy"></i> Your Achievements</h3>
+                <div class="badges">
+                    <div class="badge"><i class="fas fa-check"></i></div>
+                    <div class="badge"><i class="fas fa-star"></i></div>
+                    <div class="badge"><i class="fas fa-medal"></i></div>
+                    <div class="badge"><i class="fas fa-rocket"></i></div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalCount">0</div>
+                        <div class="stat-label">Total Goals</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="completedCount">0</div>
+                        <div class="stat-label">Achieved</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="streakCount">0</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="productivity">0%</div>
+                        <div class="stat-label">Progress</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-body">
+            <div class="input-section">
+                <input type="text" class="task-input" id="taskInput" placeholder="What's your next milestone?">
+                <button class="add-btn" id="addTaskBtn">Add Goal</button>
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All Goals</button>
+                <button class="filter-btn" data-filter="active">In Progress</button>
+                <button class="filter-btn" data-filter="completed">Achieved</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span>Your Journey</span>
+                <span id="progressText">0%</span>
+            </div>
+
+            <div class="tasks-container" id="tasksContainer">
+                <div class="empty-state">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>No goals set yet!</h3>
+                    <p>Add your first goal to start your achievement journey.</p>
+                </div>
+            </div>
+
+            <div class="motivational-text">
+                EACH COMPLETED TASK
+                BRINGS YOU CLOSER
+                TO YOUR DREAMS
+            </div>
+        </div>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+
+</html>
